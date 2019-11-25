@@ -18,14 +18,14 @@
 	</div>
 	
 	<script>
-		var videoCount = 1;
-		
+		videoCount = 1;
+		video = document.getElementById("bg-video");
 		function switchVideo() {
 			videoCount++;
 			if (videoCount > 2) videoCount = 1;
 			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+videoCount+".webm");
 			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+videoCount+".mp4");
-			document.getElementById("bg-video").play();
+			video.play();
 		}
 	</script>
 	<div id="construction2">
