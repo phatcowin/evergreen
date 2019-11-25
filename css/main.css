@@ -7,9 +7,9 @@ body, html {
 	margin: 0px;
 }
 #bg-video {
-	position: absolute;
+	position: relative;
 	bottom: 0;
-	right: 0;
+	left: 0;
 	min-width: 100%;
 	min-height: 100%;
 }
