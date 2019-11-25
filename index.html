@@ -3,20 +3,36 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Evergreen Online</title>
-	<link href="/images/LogoSm.png" rel="icon" type="image/png" />
+	<link href="/images/favicon.png" rel="icon" type="image/png" />
 	
 	<!-- CSS Stylesheets -->
 	<link href="css/main.css" rel="stylesheet" media="all" />
 </head>
 
-<body>
+<body style="background-color: black">
+	<video id="bg-video" muted autoplay onEnded="switchVideo();">
+		<source id="ss" src="http://www.evergreenclovis.com/videos/banner1.webm" type="video/webm">
+	</video>
+	
+	<script>
+		var videoCount = 1;
+		videoPlayer = document.getElementById("ss");
+		video = document.getElementById("bg-video");
+		
+		function switchVideo() {
+			videoCount++;
+			if (videoCount > 2) video_count = 1;
+			videoPlayer.setAttribute("src", "http://www.evergreenclovis.com/videos/banner"+videoCount+".webm");
+			video.play();
+		}
+	</script>
 	<div id="construction2">
-			<img src="images/LogoSm.png" alt="Evergreen Clovis" id="construction">
+			<img src="images/WhiteLogo.png" alt="Evergreen Clovis" id="construction">
 		<div>
-			Our website's not quite ready yet! <br><br>
-			In the meantime, why not check out our social media? <br><br>
-			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" id="facebook" alt="Facebook"></a>
-			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" id="insta" alt="Instagram"></a>
+			<p>Our website's not quite ready yet!</p>
+			<p>In the meantime, why not check out our social media? </p>
+			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" class="social" alt="Facebook"></a>
+			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" class="social" alt="Instagram"></a>
 		</div>
 	</div>
 </body>
