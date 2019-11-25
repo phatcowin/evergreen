@@ -18,13 +18,13 @@
 	</div>
 	
 	<script>
-		videoCount = 1;
+		video_count = 1;
 		video = document.getElementById("bg-video");
 		function switchVideo() {
-			videoCount++;
-			if (videoCount > 2) videoCount = 1;
-			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+videoCount+".webm");
-			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+videoCount+".mp4");
+			video_count++;
+			if (video_count > 2) video_count = 1;
+			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+video_count+".webm");
+			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+video_count+".mp4");
 			video.play();
 		}
 	</script>
