@@ -19,14 +19,13 @@
 	
 	<script>
 		var videoCount = 1;
-		videoPlayer = document.getElementById("ss");
-		video = document.getElementById("bg-video");
 		
 		function switchVideo() {
 			videoCount++;
-			if (videoCount > 2) video_count = 1;
-			videoPlayer.setAttribute("src", "http://www.evergreenclovis.com/videos/banner"+videoCount+".webm");
-			video.play();
+			if (videoCount > 2) videoCount = 1;
+			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+videoCount+".webm");
+			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+videoCount+".mp4");
+			document.getElementById("bg-video").play();
 		}
 	</script>
 	<div id="construction2">
