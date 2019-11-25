@@ -102,3 +102,9 @@ body {
 #bannerElements a:hover {
 	color: yellow;
 }
+#construction {
+	width: 50%;
+}
+#construction2 {
+	font-family: 'Special Elite', cursive;
+}
