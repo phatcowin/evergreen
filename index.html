@@ -26,6 +26,7 @@
 			if (video_count > 2) video_count = 1;
 			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+video_count+".webm");
 			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+video_count+".mp4");
+			video.load();
 			video.play();
 		}
 	</script>
