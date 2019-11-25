@@ -9,6 +9,7 @@ body, html {
 #bg-video {
 	position: absolute;
 	bottom: 0;
+	right: 0;
 	min-width: 100%;
 	min-height: 100%;
 }
