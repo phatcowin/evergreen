@@ -1,59 +1,233 @@
 <!doctype html>
+<!--
+TO DO:
+	KNOWN ISSUES:
+	
+	FUTURE RELEASE:
+    • Redesign mobile CSS
+	• Start/implement plant descriptions
+	• Add inventory system
+
+-->
 <html>
 <head>
 	<meta charset="UTF-8" />
+	<meta name="theme-color" content="#2E282A" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<title>Evergreen Garden Center</title>
 	<link href="/images/favicon.png" rel="icon" type="image/png" />
 	
 	<!-- CSS Stylesheets -->
 	<link href="css/main.css" rel="stylesheet" media="all" />
+    <link href="css/mobile.css" rel="stylesheet" media="all" />
+	<link href="css/navbar.css" rel="stylesheet" media="all" />
 </head>
-
+	
 <body>
-	<!--
-	<div id="slideshow">
-		<img id="bgimg1" alt="bg-image" src="images/hero/hero1.jpeg">
-		<img id="bgimg2" alt="bg-image2" src="images/hero/hero2.jpeg">
-	</div> -->
-	<div id="bgimg"></div><div id="slideshow"></div>
-	<div id="construction2">
-			<img src="images/gradyLogo.png" alt="Evergreen Clovis" id="logo">
-		<div>
-			<p>Our website's not quite ready yet.</p>
-			<p>In the meantime, why not check out our social media? </p>
-			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" class="social" alt="Facebook"></a>
-			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" class="social" alt="Instagram"></a>
+	<div style="display:none;opacity:0;">
+		<img alt="" src="images/hero/hero1.jpeg" />	
+		<img alt="" src="images/hero/hero2.jpeg" />
+		<img alt="" src="images/hero/hero3.jpeg" />
+	</div>
+	<div id="history-viewer">
+		<div class="history-content" id="history-content-1">
+			<p>Mike Ravicchio founded Evergreen Garden Center in 1986. His mom, Dyan Golick, joined him as his business partner and bookkeeper, and his brother, Bryan, joined the team as general manager the following year. The nursery opened at 350 N. Villa Ave in Clovis, CA for its first nine years in business.</p>
+			<div class="history-button-container">
+				<div align="center">
+					<button class="history-button" onclick="history('home')">Home</button>
+					<button class="history-button" onclick="history('next')">Next</button>
+				</div>
+			</div>
+		</div>
+		<div class="history-content" id="history-content-2">
+			<p>Once the lease expired at 350 N. Villa, in 1994 Mike found a parcel of land on Alluvial Ave. He spent the next year navigating the building and permitting processes, finally opening the nursery at its current location in 1995.</p>
+			<div align="center">
+				<button class="history-button" onclick="history('previous')">Back</button>
+				<button class="history-button" onclick="history('home')">Home</button>
+				<button class="history-button" onclick="history('next')">Next</button>
+			</div>
+		</div>
+		<div class="history-content" id="history-content-3">
+			<p>Together, Mike and Bryan spent each autumn improving the property. They laid cement walkways, one wheelbarrow load at a time; constructed numerous tables to display inventory and built shade structures to protect plants from the searing valley sun.</p>
+			<div align="center">
+				<button class="history-button" onclick="history('previous')">Back</button>
+				<button class="history-button" onclick="history('home')">Home</button>
+				<button class="history-button" onclick="history('next')">Next</button>
+			</div>
+		</div>
+		<div class="history-content" id="history-content-4">
+			<p>Over the years, the main focus of the nursery has been trees, shrubs, roses, perennials and bedding plants. With the addition of new employees and a changing business climate, the nursery has maintained this focus while additionally building a reputation as a "destination spot" for succulents, houseplants, gifts, an unbelievable selection of pottery...</p>
+			<div align="center">
+				<button class="history-button" onclick="history('previous')">Back</button>
+				<button class="history-button" onclick="history('home')">Home</button>
+				<button class="history-button" onclick="history('next')">Next</button>
+			</div>
+		</div>
+		<div class="history-content" id="history-content-5">
+			<p>...and, of course, the valley's sweetest dogs and cats!</p>
+			<div align="center">
+				<button class="history-button" onclick="history('previous')">Back</button>
+				<button class="history-button" onclick="history('home')">Home</button>
+			</div>
+		</div>
+	</div>
+	<div id="slideshow"></div>
+	<div id="gradient"></div>
+	<img id="hero-bottom" src="images/SVG/heroBottom.svg" width="100%" alt="">
+    <div id="nav-bar">
+        <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#social-media">Social Media</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#about-us">About Us</a></li>
+	</div>
+	
+	<div id="nav-button"><img src="images/hamburger.png" alt="E" onclick="openMenu()" /></div>
+	<div id="nav-screen">
+			<li style="border-radius: 20px 20px 0 0"><a href="#body" onclick="return closeMenu();" style>Home</a></li>
+			<li><a href="#about-us" onclick="return closeMenu();">About Us</a></li>
+			<li><a href="#newsletter" onclick="return closeMenu();">Newsletter</a></li>
+			<li><a href="#social-media" onclick="return closeMenu();">Social Media</a></li>
+			<li style="border-radius: 0 0 20px 20px; margin-bottom: 10px;"><a href="#contact-us" onclick="return closeMenu();">Contact Us</a></li>
+		<li style="border-radius: 20px"><a onclick="return closeMenu()"><b>Close</b></a></li>
+	</div>
+	<div id="background-shader" onclick="closeMenu();"></div>
+	
+	<div id="mobile-banner">
+		<img src="images/gradyLogo.png" alt="Evergreen Garden Center" />
+	</div>
+	
+
+	<div id="about-us" class="text-blob">
+		<h1>Welcome to Evergreen</h1>
+		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
+		<div class="button-container">
+			<button class="button-1" onclick="history('next');"><b>Our History</b></button>
+			<button class="button-1" onclick="showStaffMenu()"><b>Our Staff</b></button>
+		</div>
+	</div>
+	<div id="staff-back"><button onclick="staffBack()">&larr;Back</button></div>
+	<!-- STAFF SECTION -->
+	<div id="staff-select">
+		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
+		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
+		<li onclick="showStaffInfo('staff3')">Shana Matteucci</li>
+		<li onclick="showStaffInfo('staff4')">Kat Ravicchio</li>
+		<li onclick="showStaffInfo('staff5')">June DeBacker</li>
+		<li onclick="showStaffInfo('staff6')">Geoff Callow</li>
+		<li onclick="showStaffInfo('staff7')">Enrique Mendoza</li>
+		<li onclick="showStaffInfo('staff8')">John Harvill</li>
+		<!--<li onclick="showStaffInfo('staff9')">Dalton Cowin</li>
+		<li onclick="showStaffInfo('staff10')">Ryan Hansen</li>-->
+		<li style="border-bottom: none;" onclick="showStaffInfo('staff9')">...and more!</li>
+	</div>
+	<div id="staff-info">
+		<div id="staff1" class="staffms">
+			<h1>Mike Ravicchio</h1>
+            <p>Mike started Evergreen Garden Center in 1986 after graduating from Fresno State. His mother, Dyan Golick, left her job in Sonora, California and joined Mike in Clovis for their adventure. After 9 years, the nursery was built at its current location, 210 W. Alluvial Ave. in Clovis. Mike has a bachelor's degree in Ornamental Horticulture and has been gardening since he was 13.</p>
+		</div>
+		<div id="staff2" class="staffms">
+			<h1>Bryan Ravicchio</h1>
+			<p>Bryan joined his brother, Mike, in 1987. Since starting, he's been the nursery's go-to handyman, building anything we need. We can thank Bryan's craftsmanship for our current location's shelves, shade houses and cement walkways. Bryan specializes in chemicals and fertilizers, and he's also very knowledgeable when it comes to trees and shrubs.</p>
+		</div>
+		<div id="staff3" class="staffms">
+			<h1>Shana Matteucci</h1>
+            <p>Shana has blessed the nursery with her knowledge and experience since the spring of 2000. With 200 roses and counting in her yard, Shana specializes in roses, colorful gardens and intermixing varieties. Furthermore, Shana is very precise&mdash;she'll present you with a variety of plant material, solutions and her preference without wasting a second of your time.</p>
+		</div>
+		<div id="staff4" class="staffms">
+			<h1>Kat Ravicciho</h1>
+            <p>Kat is Bryan's daughter and has been with the nursery for many years. She is now a full-time employee and is our professional water person. If you think watering plants at the nursery is a simple task, try a day in Kat's shoes. She knows what needs water, how much and when. Not an easy task when you are dealing with an acre of plant material&mdash;especially on a hot summer day! Kat is also working to become our resident houseplant expert. She spends many hours online trying to find the latest information on our inventory and the latest introductions into the houseplant world. And, true to her name, she's our resident cat lover!</p>
+		</div>
+		<div id="staff5" class="staffms">
+			<h1>June DeBacker</h1>
+			<p>June DeBacker has been with the nursery for six years. She is our early-week houseplant waterer, bedding plant cleaner/displayer and all around knowledgeable salesperson. She has extensive knowledge in vegetables and loves to help our customers go hunting for hidden treasures in our "ugly plants" section.</p>
+		</div>
+		<div id="staff6" class="staffms">
+			<h1>Geoff Callow</h1>
+			Geoff began working at the nursery in 2013. Coming from Orchard Supply Hardware gave Geoff his great customer service skills, and in his time at the nursery he has grown into a skillful designer, succulent expert, all-around knowledgeable gardener and a mentor to many of our younger employees. Geoff is currently attending college as a plant science major.
+		</div>
+		<div id="staff7" class="staffms">
+			<h1>Enrique Mendoza</h1>
+			<p>Enrique is the icing on the cake at Evergreen. Enrique has been a member of the local nursery scene for the past 25 years, and his unbelievably extensive knowledge makes his experience evident. As our lead designer and resident creative madman, Enrique is in charge of our pot displays, pre-planted pot displays and all the creative fixtures in the gift shop. In 2016, Enrique began our extensive water plants department, building it from the ground up into Clovis's premier destination for aquatic plants! He has also displayed a remarkable aptitude for finding the hidden talents of many of our younger employees, steering them into their calling at the nursery.</p>
+		</div>
+		<div id="staff8" class="staffms">
+			<h1>John Harvill</h1>
+			<p>John is the workhorse of our team. He has been in the local nursery scene for over 20 years and is fully knowledgeable in every aspect of the nursery business. Customer service, however, is John's specialty. No matter the need, John always helps our customers with a smile on his face and a witty joke to follow.</p>
+		</div>
+		<!--<div id="staff9" class="staffms">
+			<h1>Dalton Cowin</h1>
+			<p>If you experience any bugs or issues with our website, please email him at <a href="mailto:dalton@evergreenclovis.com">dalton@evergreenclovis.com</a></p>
+		</div>
+		<div id="staff10" class="staffms">
+			<h1>Ryan Hansen</h1>
+			<p></p>
+		</div>-->
+        <div id="staff9" class="staffms">
+            <h1>...and more!</h1>
+            <p>We have other employees not listed on online&mdash;some requested to remain anonymous, others just started. Each member of our fantastic crew is dedicated to making your nursery visit the best possible experience. And... we're always looking for good people who share our values to join our crew! If you drop by and fill out an application, you could be the next addition to our work family!</p>
+        </div>
+	</div>
+	
+	<div id="newsletter-background">
+		<div id="nlg1"></div>
+		<div id="nlg2"></div>
+	</div>
+	
+        <div id="newsletter" class="text-blob">
+            <h1>Sign up for our newsletter</h1>
+            <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
+            <div class="newsletter-container">
+				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
+    				<input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a" />
+    				<input type="hidden" name="id" value="308d926502" />
+                	<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
+                	<input type="submit" id="submit" class="newsletter-input" value="&rarr;"/>
+				</form>
+            </div>
+        </div>
+	
+	<div class="page-content">
+		
+		<div id="social-media">
+			<!-- Google Reviews Widget (Elfsight) -->
+			<div style="margin: 20px;">
+				<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+				<div class="elfsight-app-f103c561-27c2-4589-94e2-f983c0aaebad" style="font-family: var(--body-text); max-width: 1200px; position: relative; left: 50%; transform: translate(-50%, 0);"></div>
+			</div>
+			<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"></iframe>
+
+			<div id="social-icons">
+				<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726"><img class="social-icon" src="images/facebook.svg" alt="Facebook" /></a>
+				<a href="https://www.instagram.com/evergreengardencenter"><img class="social-icon" src="images/instagram.svg" alt="Instagram" /></a>
+				<a href="https://www.yelp.com/biz/evergreen-garden-center-clovis-2?osq=evergreen+garden+center"><img class="social-icon" src="images/yelp.svg" alt="Yelp" /></a>
+			</div>
+		</div>
+		
+		<div id="contact-us">
+			<h1>Contact us</h1>
+			<div id="contact-info">
+				<p>
+					Evergreen Garden Center Inc.<br />
+					210 W. Alluvial Ave, Clovis, CA 93611 <br />
+					<a href="mailto:mike@evergreenclovis.com">mike@evergreenclovis.com</a><br />
+					<a href="tel:+15592993107">(559) 299-3107</a>
+				</p>
+			</div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1200px; margin-bottom: 0;" allowfullscreen=""></iframe>
+		</div>
+		<div id="footer">
+			&#9400; Evergreen Garden Center Inc. 2020<br />
+			<a style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
 		</div>
 	</div>
 	
-	<script>
-		var imageCount = 1;
-		bgimgjs = document.getElementById("bgimg").style;
-		slideshowjs = document.getElementById("slideshow").style;
-		var heroLoaded = document.getElementById("bgimg").complete;
-
-		function heroShow() {
-			setInterval (function() {
-				if (heroLoaded = true) {
-					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-					imageCount++;
-					if (imageCount > 9) imageCount = 1;
-					bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-				}
-			}, 5000);
-			
-			
-		}
-		heroShow();
-	</script>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
 
 	<!-- TODO: Add SDKs for Firebase products that you want to use
      	https://firebase.google.com/docs/web/setup#available-libraries -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-
-	<script>
+    <script>
   		// Your web app's Firebase configuration
   		var firebaseConfig = {
     		apiKey: "AIzaSyCxcjhIHQZu8FyVOs4d89ZM6vU-Y5XI1lc",
@@ -68,6 +242,18 @@
   		// Initialize Firebase
   		firebase.initializeApp(firebaseConfig);
   		firebase.analytics();
+	</script>
+    <script src="js/nav.js"></script>
+    <script src="js/hero.js"></script>
+	<script>
+		emailInput = document.getElementById("MERGE0");
+		// email input placeholder focus switch
+		emailInput.addEventListener('focus', function() {
+			emailInput.setAttribute('placeholder', 'Enter your email')
+		})
+		emailInput.addEventListener('blur', function() {
+			emailInput.setAttribute('placeholder', 'Sign me up!')
+		})
 	</script>
 </body>
 </html>
