@@ -220,6 +220,30 @@ TO DO:
 			<a style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
 		</div>
 	</div>
+
+	<div id="covidShade"style="z-index:1000; width:100%; height:100%; position:fixed; background:rgba(0, 0, 0, 0.5);"></div>
+
+	<div id="covidWarning" class="text-blob" style="max-width: calc(100% - 10px); overflow-y:scroll; position:fixed; z-index:10000; top:50%; left:50%; transform:translate(-50%,-50%); background:var(--pal-yellow); color:black;">
+		<h1>We're still open!</h1>
+		<p>As of today we are understaffed but still open. All employees have been told to stay home if they feel uncomfortable with being in the public. They are not in danger of losing their jobs. During busy times, we may not be able to offer our usual service or we may be unable to answer our phones. <br /><br /><b>Our hours:</b><br>Monday thru Saturday: 9am&mdash;5:30pm*<br>Sundays: 9am&mdash;5pm*<br>*We may close at 4pm on rainy days.<br><br>To help prevent the spread of COVID-19 we are making a few key changes to our customer experience, including...<br /></p>
+		<ul>
+			<li>We will not count out change&mdash;we will simply hand it to you.</li>
+			<li>We will not require a signature on your charge slips</li>
+			<li>At this time, we are not allowing children into the sales building.</li>
+		</ul>
+		<!--
+		<h2>Additionally, we are offering a 15% discount on all regular priced items for those of you who have had your hours cut at work.</h2>
+		<p>We feel so fortunate to remain open and busy. We know that many of you have lost hours at work and have the desire to be outside in the sun and in your garden. That is why we are offering this discount&mdash;it's our way of thanking you for your support for the last 35, years during the good times and the bad. If you've lost hours, please request your discount at the register.</p> -->
+		<div style="text-align:center;">
+			<button class="button-1" onclick="covidClose()" style="background:var(--pal-red);"><b>Close</b></button>
+		</div>
+	</div>
+	<script>
+		function covidClose() {
+			document.getElementById("covidWarning").style.display = "none";
+			document.getElementById("covidShade").style.display = "none";
+		}
+	</script>
 	
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>

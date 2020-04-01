@@ -194,6 +194,21 @@ p {
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
     z-index: 2;
 }
+.text-blob ul li {
+	font-family: var(--body-text);
+	font-style: var(--body-style);
+	font-size: var(--body-size);
+	text-align: left;
+	line-height: 1.4em;
+	font-weight: 400;
+}
+.text-blob h2 {
+	font-family: var(--header);
+	font-style: var(--header-style);
+	font-size: 1.2em;
+	font-weight: 700; /*400*/
+	text-align: center;
+}
 #about-us {
     top: 25%;
     left: var(--aboutus-d);
